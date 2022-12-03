@@ -2,7 +2,11 @@
 
 def call() {
     pipeline {
-        agent any
+        agent {
+            docker {
+                image 'sdkman-gradle-java'
+            }
+        }
         environment {
             MESSAGE = 'Hello!'
         }
