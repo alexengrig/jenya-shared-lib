@@ -2,18 +2,16 @@
 
 def call() {
     pipeline {
-        agent {
-            docker {
-                image 'alexengrig/sdkman-gradle-java:snapshot'
-            }
-        }
+        agent any
+
         environment {
-            MESSAGE = 'Hello, SDKMAN!'
+            GREETING_MESSAGE = 'Hello, Application!'
         }
+
         stages {
-            stage('Stage') {
+            stage('Greeting') {
                 steps {
-                    echo "${MESSAGE}"
+                    echo "${GREETING_MESSAGE}"
                 }
             }
         }
