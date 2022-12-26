@@ -19,9 +19,16 @@ sourceSets {
 
 repositories {
     mavenCentral()
+    maven {
+        url = 'https://repo.jenkins-ci.org/public'
+    }
 }
 
 dependencies {
+    implementation 'org.apache.groovy:groovy-all:4.0.6'
+    implementation 'com.cloudbees:groovy-cps:1.31'
+    implementation 'org.jenkins-ci.main:jenkins-core:2.381'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
